@@ -1,7 +1,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Live](#live-:star2:)
+* [Live](#live-star2)
 
 ## General info
 Calculator
