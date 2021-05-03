@@ -9,3 +9,12 @@ const btnNr8 = document.querySelector(".nr8");
 const btnNr9 = document.querySelector(".nr9");
 const btnNr0 = document.querySelector(".nr0");
 const btnNumbers = [btnNr1, btnNr2, btnNr3, btnNr4, btnNr5, btnNr6, btnNr7, btnNr8, btnNr9, btnNr0];
+const calcDisplay = document.querySelector("input");
+
+//getting number to display
+btnNumbers.forEach(button => {
+    button.addEventListener("click", () => {
+        btnNumber = button.dataset.num;
+        calcDisplay.value += btnNumber;
+    });
+});
