@@ -12,6 +12,15 @@ const btnNumbers = [btnNr1, btnNr2, btnNr3, btnNr4, btnNr5, btnNr6, btnNr7, btnN
 const btnAC = document.querySelector(".btn.ac");
 const btnDot = document.querySelector(".btn.dot");
 const calcDisplay = document.querySelector("input");
+const btnAdd = document.querySelector(".btn.add");
+const btnSub = document.querySelector(".btn.sub");
+const btnDiv = document.querySelector(".btn.dv");
+const btnMlt = document.querySelector(".btn.mlt");
+const btnEq = document.querySelector(".btnEqual");
+let value1 = '';
+let value2 = '';
+let result = '';
+let operator = '';
 
 //getting number to display
 btnNumbers.forEach(button => {
@@ -35,3 +44,56 @@ btnDot.addEventListener("click", () => {
         return;
     }
 });
+
+btnAdd.addEventListener("click", () => {
+    operator = "add";
+    value1 = calcDisplay.value;
+    calcDisplay.value = '';
+});
+
+btnSub.addEventListener("click", () => {
+    operator = "sub";
+    value1 = calcDisplay.value;
+    calcDisplay.value = '';
+});
+
+btnDiv.addEventListener("click", () => {
+    operator = "div";
+    value1 = calcDisplay.value;
+    calcDisplay.value = '';
+});
+
+btnMlt.addEventListener("click", () => {
+    operator = "mlt";
+    value1 = calcDisplay.value;
+    calcDisplay.value = '';
+});
+
+btnEq.addEventListener("click", () => {
+    value2 = calcDisplay.value;
+    calculate();
+});
+
+function calculate() {
+    switch (operator) {
+        case "add":
+            result = Number(value1) + Number(value2);
+            calcDisplay.value = result;
+            break;
+
+        case "sub":
+            result = Number(value1) - Number(value2);
+            calcDisplay.value = result;
+            break;
+
+        case "div":
+            result = Number(value1) / Number(value2);
+            calcDisplay.value = result;
+            break;
+
+        case "mlt":
+            result = Number(value1) * Number(value2);
+            calcDisplay.value = result;
+            break;
+    }
+}
